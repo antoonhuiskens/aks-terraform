@@ -3,6 +3,11 @@ variable "rg-name" {
   default = "aks-rg"
 }
 
+variable "aks-sg-name" {
+  type    = string
+  default = "aks-sg"
+}
+
 variable "acr-name" {
   type = string
   default = "ahacrngx"

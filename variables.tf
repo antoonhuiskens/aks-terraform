@@ -1,3 +1,8 @@
+variable "prefix" {
+  type    = string
+  default = "ah" 
+}
+
 variable "rg-name" {
   type    = string
   default = "aks-rg"
@@ -26,6 +31,10 @@ variable "location" {
 variable "clustername" {
   type    = string
   default = "aks-cluster"
+}
+
+variable "ad_app" {
+  type    = string 
 }
 
 variable "password" {

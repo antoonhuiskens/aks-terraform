@@ -4,7 +4,7 @@ resource "azurerm_lb" "aks-lb" {
   resource_group_name = azurerm_resource_group.aks-rg.name
 }
 resource "azurerm_network_security_group" "aks-sg" {
-  name                = var.aks-sg-name
+  name                = "${var.prefix}-${var.aks-sg-name}"
   location            = azurerm_resource_group.aks-rg.location
   resource_group_name = azurerm_resource_group.aks-rg.name
 

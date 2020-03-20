@@ -1,5 +1,3 @@
-data "azurerm_subscription" "current" {}
-
 data "azuread_application" "aks-tf-app" {
   name = "ah-aks-tf"
 }

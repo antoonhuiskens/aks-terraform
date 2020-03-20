@@ -7,6 +7,7 @@
 * azure cli. Get it at: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos?view=azure-cli-latest
 
 ```
+$ az login
 $ git clone https://github.com/antoonhuiskens/aks-terraform.git`
 $ cd aks-terraform
 $ terraform init

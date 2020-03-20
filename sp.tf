@@ -8,6 +8,8 @@ data "azuread_service_principal" "aks-tf-sp" {
 data "azuread_application" "aks-tf-app" {
   name = var.ad_app
 }
+
+# update the end_date for the SP.
 resource "azuread_application_password" "aks_sp_pwd" {
   application_object_id = data.azuread_application.aks-tf-app.id
   value                 = var.password

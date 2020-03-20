@@ -3,12 +3,13 @@ data "azurerm_kubernetes_service_versions" "current" {
   version_prefix = var.k8sversion
 }
 
-resource "azurerm_kubernetes_cluster" "ngx-aks" {
+resource "azurerm_kubernetes_cluster" "aks" {
   name                = "${var.prefix}-${var.clustername}"
   location            = azurerm_resource_group.aks-rg.location
   resource_group_name = azurerm_resource_group.aks-rg.name
   dns_prefix          = "${var.prefix}-${var.clustername}"
   kubernetes_version  = data.azurerm_kubernetes_service_versions.current.latest_version
+  node_resource_group = "${var.prefix}-node-${var.rg-name}"
 
   default_node_pool {
     name            = "default"

@@ -14,7 +14,8 @@ $ terraform init
 
 ## important
 This terraform uses a pre-existing SP, given that there are some timeout issues when creating a SP through terraform.
-In short: Create an app registration,
+In short: Create an app registration, add the service principal, create a secret and keep it safe. Use the secret as a value for the password value below.
+Another way would be to deploy an aks from the azure portal, and copy all the properties in the generated SP.
 
 A basic setup requires at least the following variables to be set:
 

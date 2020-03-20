@@ -28,6 +28,11 @@ variable "location" {
   default = "West Europe"
 }
 
+variable "k8sversion" {
+  type    = string
+  default = "1.16"
+}
+
 # Below are suffixes you can modify but which generally take sensible defaults.
 
 variable "rg-name" {

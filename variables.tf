@@ -13,12 +13,23 @@ variable "password" {
   type = string
 }
 
+# define credentials and ssh key for the linux user of the AKS nodes.
+variable "linuxuser" {
+   type = string 
+}
+
+variable "mysshkey" {
+   type   = string
+}
+
 # Default location for the entire setup is "West Europe".
 variable "location" {
   type    = string
   default = "West Europe"
 }
+
 # Below are suffixes you can modify but which generally take sensible defaults.
+
 variable "rg-name" {
   type    = string
   default = "aks-rg"

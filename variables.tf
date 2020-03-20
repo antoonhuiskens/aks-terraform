@@ -15,7 +15,7 @@ variable "aks-sg-name" {
 
 variable "acr-name" {
   type = string
-  default = "ahacrngx"
+  default = "aksacr"
 }
 
 variable "lb-name" {

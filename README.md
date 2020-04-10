@@ -43,7 +43,7 @@ Alternatively, plan and/or apply with:
 
  `terraform [plan|apply] -var 'prefix=ah'`
 
-See `terraform plan --help` for more ways of passing in variables. (terraform.tfvars comes to mind)
+See `terraform plan --help` for more ways of passing in variables. (terraform.tfvars comes to mind, which is what I'm actually using)
 
 
 In order to deploy:
@@ -52,13 +52,19 @@ In order to deploy:
 $ terraform plan -out plan && terraform apply plan
 ```
 
-Once this completes (I'm seeing around 10-15 minutes typically):
+Once this completes (I'm seeing around 10-15 minutes typically), terraform reports the outputs defined:
+
+* kubeconfig - the kubeconfig file
+* acr_host - the hostname for the azure container registry
+*
+* rg - name of the main resource group
+
 
 ```
-# Get some info on your cluster:
-$ az aks list -g ${TF_VAR_prefix}-aks-rg -o table
+# Get some info on your cluster  (set the prefix yourself ...)
+$ az aks list -g $({terraform output rg) -o table
 # To download and merge the kubeconfig:
-$ az aks get-credentials -n ${TF_VAR_prefix}-aks-cluster -g ${TF_VAR_prefix}-aks-rg
+$ az aks get-credentials -n ${prefix}-aks-cluster -g $(terraform output rg)
 ```
 
 In order to destroy:

@@ -8,7 +8,7 @@
 
 ```
 $ az login
-$ git clone https://github.com/antoonhuiskens/aks-terraform.git`
+$ git clone https://github.com/antoonhuiskens/aks-terraform.git
 $ cd aks-terraform
 $ terraform init
 ```
@@ -55,8 +55,9 @@ $ terraform plan -out plan && terraform apply plan
 Once this completes (I'm seeing around 10-15 minutes typically), terraform reports the outputs defined:
 
 * kubeconfig - the kubeconfig file
-* acr_host - the hostname for the azure container registry
-*
+* kubernetes_host - the kubernetes hostname
+* acr_fqdn - the hostname for the azure container registry
+* acr_name - the ...
 * rg - name of the main resource group
 
 

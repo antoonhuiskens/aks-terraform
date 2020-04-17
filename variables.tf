@@ -47,7 +47,7 @@ variable "aks-sg-name" {
 
 variable "acr-name" {
   type = string
-  default = "aksacr"
+  default = "5875aksacr"
 }
 
 variable "lb-name" {
